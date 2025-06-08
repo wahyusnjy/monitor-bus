@@ -29,11 +29,9 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 
 ## 🔗 Base URL
 
----
-
 ## 🔐 Authentication
 
-### 🔸 Register
+## 🔸 Register
 
 **POST** `/api/register`
 
@@ -48,7 +46,7 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 }
 ```
 
-### 🔸 Login
+## 🔸 Login
 
 **POST** `/api/login`
 
@@ -60,26 +58,26 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 }
 ``` 
 
-### 🔸 Get Authenticated User
+## 🔸 Get Authenticated User
 
 **POST** `/api/user`
 
 **Headers:** `Authorization: Bearer <token>`
 
-### 🚌 Bus Endpoints 
+## 🚌 Bus Endpoints 
 
 **GET** `/api/buses`  - Get all buses
 **GET** `/api/buses/active`  - Get active buses
 **GET** `/api/buses/{bus}/locations`  - Get location history
 **GET** `/api/buses/nearby?lat=-6.2&lng=106.8`  - Get nearby buses
 
-### 🛣️ Route Endpoints 
+## 🛣️ Route Endpoints 
 
 **GET** `/api/routes`  - List all routes
 **GET** `/api/routes/{route}`  - Route details
 
 
-### 📡 GPS Update Endpoint
+## 📡 GPS Update Endpoint
 
 **POST** `/api/gps-update`
 **Middleware:** `gps.device.auth`
@@ -97,12 +95,12 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 ```
 
 
-### 📢 WebSocket Auth 
+## 📢 WebSocket Auth 
 
 **POST** `/broadcasting/auth` 
 
 
-### 📥 Required Headers
+## 📥 Required Headers
 
 ```
 Accept: application/json
@@ -111,7 +109,7 @@ Authorization: Bearer <token>
 ```
 
 
-------
+--
 
 ## 🚀 Getting Started
 
