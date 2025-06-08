@@ -27,6 +27,92 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 
 ---
 
+## 🔗 Base URL
+
+---
+
+## 🔐 Authentication
+
+### 🔸 Register
+
+**POST** `/api/register`
+
+**Request JSON:**
+```json
+{
+  "name": "Budi Santoso",
+  "email": "budi@example.com",
+  "password": "password123",
+  "password_confirmation": "password123",
+  "role": "driver"
+}
+```
+
+### 🔸 Login
+
+**POST** `/api/login`
+
+**Request JSON:**
+```json
+{
+  "email": "budi@example.com",
+  "password": "password123"
+}
+``` 
+
+### 🔸 Get Authenticated User
+
+**POST** `/api/user`
+
+**Headers:** `Authorization: Bearer <token>`
+
+### 🚌 Bus Endpoints 
+
+**GET** `/api/buses`  - Get all buses
+**GET** `/api/buses/active`  - Get active buses
+**GET** `/api/buses/{bus}/locations`  - Get location history
+**GET** `/api/buses/nearby?lat=-6.2&lng=106.8`  - Get nearby buses
+
+### 🛣️ Route Endpoints 
+
+**GET** `/api/routes`  - List all routes
+**GET** `/api/routes/{route}`  - Route details
+
+
+### 📡 GPS Update Endpoint
+
+**POST** `/api/gps-update`
+**Middleware:** `gps.device.auth`
+
+**Request JSON:**
+```json
+{
+  "bus_id": 1,
+  "latitude": -6.2011,
+  "longitude": 106.8200,
+  "speed": 35.5,
+  "heading": 90.0,
+  "device_time": "2025-06-08T10:00:00Z"
+}
+```
+
+
+### 📢 WebSocket Auth 
+
+**POST** `/broadcasting/auth` 
+
+
+### 📥 Required Headers
+
+```
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer <token>
+```
+
+
+------
+
 ## 🚀 Getting Started
 
 ### 🔧 Requirements
