@@ -66,20 +66,20 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 
 ## 🚌 Bus Endpoints 
 
-**GET** `/api/buses`  - Get all buses
-**GET** `/api/buses/active`  - Get active buses
-**GET** `/api/buses/{bus}/locations`  - Get location history
-**GET** `/api/buses/nearby?lat=-6.2&lng=106.8`  - Get nearby buses
+**GET** `/api/buses`  - Get all buses \
+**GET** `/api/buses/active`  - Get active buses \
+**GET** `/api/buses/{bus}/locations`  - Get location history \
+**GET** `/api/buses/nearby?lat=-6.2&lng=106.8`  - Get nearby buses 
 
 ## 🛣️ Route Endpoints 
 
-**GET** `/api/routes`  - List all routes
-**GET** `/api/routes/{route}`  - Route details
+**GET** `/api/routes`  - List all routes \
+**GET** `/api/routes/{route}`  - Route details 
 
 
 ## 📡 GPS Update Endpoint
 
-**POST** `/api/gps-update`
+**POST** `/api/gps-update` \
 **Middleware:** `gps.device.auth`
 
 **Request JSON:**
@@ -109,7 +109,7 @@ Authorization: Bearer <token>
 ```
 
 
---
+---
 
 ## 🚀 Getting Started
 
