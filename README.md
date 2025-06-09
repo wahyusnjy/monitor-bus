@@ -69,7 +69,7 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 **GET** `/api/buses`  - Get all buses \
 **GET** `/api/buses/active`  - Get active buses \
 **GET** `/api/buses/{bus}/locations`  - Get location history \
-**GET** `/api/buses/nearby?lat=-6.2&lng=106.8`  - Get nearby buses 
+**GET** `/api/buses/nearby?lat=-6.2&lng=106.8&radius=1`  - Get nearby buses 
 
 ## 🛣️ Route Endpoints 
 
@@ -85,9 +85,9 @@ A Laravel-based backend API for a real-time bus monitoring system with RESTful e
 **Request JSON:**
 ```json
 {
-  "bus_id": 1,
-  "latitude": -6.2011,
-  "longitude": 106.8200,
+  "device_id": "B 1234 XYZ",
+  "latitude": -6.180353,
+  "longitude": 106.823704,
   "speed": 35.5,
   "heading": 90.0,
   "device_time": "2025-06-08T10:00:00Z"
@@ -124,7 +124,7 @@ Authorization: Bearer <token>
 ### 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/bus-monitoring-api.git
+git clone https://github.com/wahyusnjy/monitor-bus.git
 cd bus-monitoring-api
 
 # Install dependencies
