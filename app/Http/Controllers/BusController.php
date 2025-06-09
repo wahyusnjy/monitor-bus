@@ -38,9 +38,9 @@ class BusController extends Controller
     public function nearbyBuses(Request $request)
     {
         $request->validate([
-            'latitude' => 'required|numeric',
-            'longitude' => 'required|numeric',
-            'radius' => 'required|numeric|min:100' // dalam meter
+            'lng' => 'required|numeric',
+            'lat' => 'required|numeric',
+            'radius' => 'required|numeric' // dalam meter
         ]);
 
         $locations = BusLocation::with('bus')
@@ -48,8 +48,8 @@ class BusController extends Controller
                 $query->where('is_active', true);
             })
             ->withinRadius(
-                $request->latitude,
-                $request->longitude,
+                $request->lat,
+                $request->lng,
                 $request->radius
             )
             ->orderBy('device_time', 'desc')

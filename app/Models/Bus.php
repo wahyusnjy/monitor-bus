@@ -27,7 +27,7 @@ class Bus extends Model
 
     public function activeRoutes()
     {
-        return $this->belongsToMany(Route::class, 'bus_route_assignment')
+        return $this->belongsToMany(Route::class, 'bus_route_assignments')
                    ->wherePivot('is_active', true)
                    ->withPivot(['schedule_start', 'schedule_end']);
     }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\GpsController;
 use App\Http\Controllers\RouteController;
+use App\Http\Middleware\GpsDeviceAuth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +35,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/gps-update', [GpsController::class, 'handleGpsUpdate'])
-    ->middleware('gps.device.auth');
+    ->middleware(GpsDeviceAuth::class);
 
 // WebSocket auth channel
 Route::post('/broadcasting/auth', function () {

@@ -34,5 +34,9 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    
+    'gps' => [
+        'device_key' => env('GPS_DEVICE_KEY', 'default_secret_key_ubah_dengan_yang_lebih_aman'),
+    ],
 
 ];

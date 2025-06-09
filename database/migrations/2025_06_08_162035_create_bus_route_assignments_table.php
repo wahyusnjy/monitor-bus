@@ -40,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bus_route_assignments');
+        Schema::dropIfExists('s');
     }
 };

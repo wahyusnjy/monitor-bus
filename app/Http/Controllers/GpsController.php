@@ -16,7 +16,7 @@ class GpsController extends Controller
             'longitude' => 'required|numeric|between:-180,180',
             'speed' => 'nullable|numeric|min:0',
             'heading' => 'nullable|numeric|between:0,360',
-            'timestamp' => 'required|date'
+            'device_time' => 'required|date'
         ]);
 
         $bus = Bus::where('plate_number', $validated['device_id'])->first();
@@ -26,7 +26,7 @@ class GpsController extends Controller
             'longitude' => $validated['longitude'],
             'speed' => $validated['speed'] ?? null,
             'heading' => $validated['heading'] ?? null,
-            'device_time' => $validated['timestamp']
+            'device_time' => $validated['device_time']
         ]);
 
         // Broadcast event ke channel realtime
