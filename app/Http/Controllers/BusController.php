@@ -11,7 +11,7 @@ class BusController extends Controller
     public function index()
     {
         return response()->json([
-            'data' => Bus::with(['currentLocation', 'activeRoutes'])->get()
+            'data' => Bus::with(['currentLocation', 'activeRoutes', 'activeRoutes.points'])->get()
         ]);
     }
 
